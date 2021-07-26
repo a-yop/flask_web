@@ -8,9 +8,15 @@ app.debug = True
 @app.route('/',methods=['GET','POST'])
 def hello_world():
     articles = Articles()
+    # print(articles) <= test1
+
+    # for i in articles:
+    #     print(i['title']) <= test2
+
     return render_template('index.html', articles = articles) #템플릿/abc에 있으면 ('abc/index.html')
-#데코?
-# 키값 = value
+#@app.route는 데코?
+#print() <- 콘솔에 뜨도록
+#'index.html', 키값 = value
 
 if __name__ == '__main__':
     app.run()
