@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+#* <- 모든 파일 버전관리 안하겠다
+
+/Lib
+/Scripts
+pyvenv.cfg 
+# 이건 버전관리 안하겠다
+
