@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template ,request
 from data import Articles
 
 app = Flask(__name__)
@@ -17,6 +17,14 @@ def hello_world():
 #@app.route는 데코?
 #print() <- 콘솔에 뜨도록
 #'index.html', 키값 = value
+
+@app.route('/<id>/article', methods=['GET','POST'])
+def detail(id):
+    if request.method == 'GET':
+        articles = Articles()
+        print(articles[int(id)-1])
+        return render_template('detail.html', article=articles[int(id)-1])
+
 
 if __name__ == '__main__':
     app.run()
